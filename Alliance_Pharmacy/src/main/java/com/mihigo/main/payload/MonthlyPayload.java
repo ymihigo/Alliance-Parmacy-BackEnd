@@ -1,14 +1,6 @@
-package com.mihigo.main.models;
+package com.mihigo.main.payload;
 
-import java.util.Date;
-
-import javax.persistence.*;
-
-@Entity
-public class Monthly {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+public class MonthlyPayload {
 	private double openingBalance;
 	private double salaryone;
 	private double salaryTwo;
@@ -22,57 +14,15 @@ public class Monthly {
 	private double water;
 	private double security;
 	private double patient;
-	private Date doneOn = new Date();
 	private int month;
 
-	public Monthly() {
+	public MonthlyPayload() {
 		super();
 	}
 
-	public Monthly(int id, double openingBalance, double salaryone, double salaryTwo, double vat, double rssb,
-			double electricity, double maintenance, double umurenge, double tpr, double rent,
-			double water, double security, double patient, Date doneOn,int month) {
-		this.id = id;
-		this.openingBalance = openingBalance;
-		this.salaryone = salaryone;
-		this.salaryTwo = salaryTwo;
-		this.vat = vat;
-		this.rssb = rssb;
-		this.electricity = electricity;
-		this.maintenance = maintenance;
-		this.umurenge = umurenge;
-		this.tpr = tpr;
-		this.rent = rent;
-		this.water = water;
-		this.security = security;
-		this.patient = patient;
-		this.doneOn = doneOn;
-		this.month = month;
-	}
-
-	public Monthly(double openingBalance, double salaryone, double salaryTwo, double vat, double rssb,
-			double electricity, double maintenance, double umurenge, double tpr, double rent,
-			double water, double security, double patient, Date doneOn,int month) {
-		this.openingBalance = openingBalance;
-		this.salaryone = salaryone;
-		this.salaryTwo = salaryTwo;
-		this.vat = vat;
-		this.rssb = rssb;
-		this.electricity = electricity;
-		this.maintenance = maintenance;
-		this.umurenge = umurenge;
-		this.tpr = tpr;
-		this.rent = rent;
-		this.water = water;
-		this.security = security;
-		this.patient = patient;
-		this.doneOn = doneOn;
-		this.month = month;
-	}
-
-	public Monthly(double openingBalance, double salaryone, double salaryTwo, double vat, double rssb,
-			double electricity, double maintenance, double umurenge, double tpr, double rent,
-			double water, double security, double patient,int month) {
+	public MonthlyPayload(double openingBalance, double salaryone, double salaryTwo, double vat, double rssb,
+			double electricity, double maintenance, double umurenge, double tpr, double rent, double water,
+			double security, double patient, int month) {
 		this.openingBalance = openingBalance;
 		this.salaryone = salaryone;
 		this.salaryTwo = salaryTwo;
@@ -87,14 +37,6 @@ public class Monthly {
 		this.security = security;
 		this.patient = patient;
 		this.month = month;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public double getOpeningBalance() {
@@ -193,27 +135,19 @@ public class Monthly {
 		this.security = security;
 	}
 
-	public double getpatient() {
+	public double getPatient() {
 		return patient;
 	}
 
-	public void setpatient(double patient) {
+	public void setPatient(double patient) {
 		this.patient = patient;
 	}
 
-	public Date getDoneOn() {
-		return doneOn;
-	}
-
-	public void setDoneOn(Date doneOn) {
-		this.doneOn = doneOn;
-	}
-
-	public int getMonth() {
+	public int getmonth() {
 		return month;
 	}
 
-	public void setMonth(int month) {
+	public void setmonth(int month) {
 		this.month = month;
 	}
 }

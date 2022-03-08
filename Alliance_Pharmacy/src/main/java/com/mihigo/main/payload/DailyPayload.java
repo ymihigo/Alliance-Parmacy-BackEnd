@@ -7,7 +7,6 @@ public class DailyPayload {
 
 	public DailyPayload() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public DailyPayload(String date, String details, String amount) {

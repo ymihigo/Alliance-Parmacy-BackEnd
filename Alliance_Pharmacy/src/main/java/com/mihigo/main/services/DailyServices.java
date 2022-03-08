@@ -8,7 +8,7 @@ public interface DailyServices {
 
 	Daily createDaily(String details, String amount, String date);
 
-	double totalDailPerMonth(String date);
+	double totalDailPerMonth(int date);
 
 	List<Daily> get_All_Dailly();
 }

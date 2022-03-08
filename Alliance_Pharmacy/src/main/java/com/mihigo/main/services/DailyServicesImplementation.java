@@ -9,12 +9,14 @@ import org.springframework.stereotype.Service;
 
 import com.mihigo.main.models.Daily;
 import com.mihigo.main.repository.DailyRepo;
+import com.mihigo.main.repository.MonthlyRepo;
 
 @Service
 public class DailyServicesImplementation implements DailyServices {
 
 	@Autowired
 	private DailyRepo dr;
+
 
 	@Override
 	public Daily createDaily(String details, String amount, String date) {
@@ -43,8 +45,17 @@ public class DailyServicesImplementation implements DailyServices {
 	}
 
 	@Override
-	public double totalDailPerMonth(String date) {
-		// TODO Auto-generated method stub
+	public double totalDailPerMonth(int month) {
+		try {
+			String c = dr.get_total_Amount(month);
+			if (c == null) {
+				return 0;
+			} else {
+				return Double.parseDouble(c);
+			}
+		} catch (Exception ex) {
+
+		}
 		return 0;
 	}
 

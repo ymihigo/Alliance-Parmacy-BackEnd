@@ -1,6 +1,5 @@
 package com.mihigo.main.repository;
 
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,8 +10,7 @@ import com.mihigo.main.models.Daily;
 @Repository
 public interface DailyRepo extends JpaRepository<Daily, Integer> {
 
-	
-	@Query("SELECT SUM(d.amount) FROM Daily d WHERE MONTH(d.date)= :month")
+	@Query("SELECT SUM(d.amount) FROM Daily d WHERE MONTH(d.date)= :month  AND YEAR(d.date) = YEAR(NOW())")
 	String get_total_Amount(@Param("month") int mo);
-	
+
 }
